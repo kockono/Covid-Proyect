@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+// Librerias de *NgFor *NgIf *NgSwitch *NgStyle
+import { NgModule } from '@angular/core';
 
 // Librerias de rutas de navegación de Angular
 import { AppRoutingModule } from './app-routing.module';
@@ -8,8 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BienvenidaComponent } from './views/bienvenida/bienvenida.component';
 
-//  Librerias para servicios
+//  Libreria para peticiones al BackEnd/Servidor
 import { HttpClientModule } from "@angular/common/http"; 
+
 @NgModule({
   declarations: [
     AppComponent,
