@@ -13,13 +13,15 @@ import { ChartsModule } from 'ng2-charts'
 
 //  Libreria para peticiones al BackEnd/Servidor
 import { HttpClientModule } from "@angular/common/http";
-import { NavbarComponent } from './shared/navbar/navbar.component'; 
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { GraficasComponent } from './views/graficas/graficas.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidaComponent,
-    NavbarComponent
+    NavbarComponent,
+    GraficasComponent
   ],
   imports: [
     BrowserModule,

@@ -3,14 +3,17 @@ import { Component, OnInit } from '@angular/core';
 // Importanción de servicios
 import { ApiCovidService } from './../../services/api-covid.service';
 
-// Librerias Agenas
-import {Chart} from 'node_modules/chart.js';
+// Models
+import { Welcome } from 'src/app/models/covid-json.model';
+
 @Component({
   selector: 'app-bienvenida',
   templateUrl: './bienvenida.component.html',
   styleUrls: ['./bienvenida.component.css']
 })
 export class BienvenidaComponent implements OnInit {
+
+  Data:Welcome; // Variable con toda la información del api de Covid
 
   constructor(public apiCovid:ApiCovidService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
 
@@ -30,7 +33,6 @@ export class BienvenidaComponent implements OnInit {
     {data: [28], label: 'D'}
   ];
 
-  Data:any; // Variable con toda la información del api de Covid
 
   ngOnInit() {
    
@@ -38,8 +40,9 @@ export class BienvenidaComponent implements OnInit {
   }
 
   getData() {
-    this.Data = this.apiCovid.getCovidInfo().subscribe(res => {  // Aquí igualamos la info que trae la api del servicio en la variable --Data--
+    this.apiCovid.getCovidInfo().subscribe((res:Welcome) => {  // Peticición al servicio para que haga la petición
       console.info(res) // Un Console.info para ver la respuesta que nos trae el servidor o la Api 
+      this.Data = res   // Aquí igualamos la info que trae la api del servicio en la variable --Data--
     });
   }
 
