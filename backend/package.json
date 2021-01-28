@@ -1,0 +1,19 @@
+{
+  "name": "covidapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kockono/Covid-Proyect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kockono/Covid-Proyect/issues"
+  },
+  "homepage": "https://github.com/kockono/Covid-Proyect#readme"
+}
