@@ -9,19 +9,23 @@ import { AppRoutingModule } from './app-routing.module';
 // Componentes o Vistas de Angular
 import { AppComponent } from './app.component';
 import { BienvenidaComponent } from './views/bienvenida/bienvenida.component';
+import { ChartsModule } from 'ng2-charts'
 
 //  Libreria para peticiones al BackEnd/Servidor
-import { HttpClientModule } from "@angular/common/http"; 
+import { HttpClientModule } from "@angular/common/http";
+import { NavbarComponent } from './shared/navbar/navbar.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BienvenidaComponent
+    BienvenidaComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
