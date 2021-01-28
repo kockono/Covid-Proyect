@@ -35,8 +35,8 @@ export class BienvenidaComponent implements OnInit {
 
 
   ngOnInit() {
-   
     this.getData(); // Llamada al metodo que contiene la llamada de la Apí
+    
   }
 
   getData() {
