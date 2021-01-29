@@ -14,14 +14,16 @@ import { ChartsModule } from 'ng2-charts'
 //  Libreria para peticiones al BackEnd/Servidor
 import { HttpClientModule } from "@angular/common/http";
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { GraficasComponent } from './views/graficas/graficas.component'; 
+import { GraficasComponent } from './views/graficas/graficas.component';
+import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidaComponent,
     NavbarComponent,
-    GraficasComponent
+    GraficasComponent,
+    InicioSesionComponent,
   ],
   imports: [
     BrowserModule,
