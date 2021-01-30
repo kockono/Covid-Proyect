@@ -16,6 +16,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GraficasComponent } from './views/graficas/graficas.component';
 import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
+import { FooterComponent } from './views/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.compo
     NavbarComponent,
     GraficasComponent,
     InicioSesionComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
