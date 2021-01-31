@@ -6,6 +6,7 @@ import { ApiCovidService } from './../../services/api-covid.service';
 // Models
 import { Welcome } from 'src/app/models/covid-json.model';
 
+
 @Component({
   selector: 'app-bienvenida',
   templateUrl: './bienvenida.component.html',
@@ -16,8 +17,9 @@ export class BienvenidaComponent implements OnInit {
   Data:Welcome; // Variable con toda la información del api de Covid
 
   constructor(public apiCovid:ApiCovidService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
-
+    
   } 
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
