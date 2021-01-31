@@ -19,6 +19,9 @@ import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.compo
 import { FooterComponent } from './shared/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EncuestaComponent } from './views/encuesta/encuesta.component';
+import { NavadminComponent } from './shared/navadmin/navadmin.component';
+import { NavuserComponent } from './shared/navuser/navuser.component';
+import { NewAccountComponent } from './views/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { EncuestaComponent } from './views/encuesta/encuesta.component';
     InicioSesionComponent,
     FooterComponent,
     EncuestaComponent,
+    NavadminComponent,
+    NavuserComponent,
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
