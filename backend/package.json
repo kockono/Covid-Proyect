@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kockono/Covid-Proyect/issues"
   },
-  "homepage": "https://github.com/kockono/Covid-Proyect#readme"
+  "homepage": "https://github.com/kockono/Covid-Proyect#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
 }
