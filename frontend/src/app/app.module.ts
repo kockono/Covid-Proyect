@@ -16,8 +16,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GraficasComponent } from './views/graficas/graficas.component';
 import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
-import { FooterComponent } from './views/footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EncuestaComponent } from './views/encuesta/encuesta.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     GraficasComponent,
     InicioSesionComponent,
     FooterComponent,
+    EncuestaComponent,
   ],
   imports: [
     BrowserModule,
