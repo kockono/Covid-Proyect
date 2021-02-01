@@ -9,6 +9,11 @@ export class InicioSesionComponent implements OnInit {
 
   constructor() { }
 
+  user = {
+    email: '',
+    password: ''
+  }
+
   ngOnInit(): void {
   }
 
