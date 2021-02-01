@@ -35,6 +35,35 @@ app.get('/api/inicio', function(req, res){
     })
 })
 
+app.get('/api/usuarios', function(req, res){
+    client.connect(err => {
+        client.db("Covid").collection("usuarios").find().each(function(err, doc){
+            if(doc != null){
+                let info = doc
+                res.send(info)
+            }
+        })
+        client.close();
+    });
+})
+
+app.get('/api/signin', function(req, res){
+    //const { nombre, apellido, username, password, tipo } = req.body
+    client.connect(err => {
+        client.db("Covid").collection("usuarios").insertOne({
+            nombre: "Chris",
+            apellido: "Marquez",
+            username: "kockono@gamil.com",
+            password: "Chirseselmejor",
+            tipo: "admin"
+        })
+        res.send(
+            "Se ha insertado con exito"
+        )
+        client.close()
+    })
+})
+
 app.listen(puerto, function () {
     console.log("Api corriendo en el puerto " + puerto);
 })
