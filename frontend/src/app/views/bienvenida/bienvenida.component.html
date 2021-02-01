@@ -1,5 +1,117 @@
-<h1>Bienvenido</h1>
+<app-navbar></app-navbar>
+<main class="container-sm mt-5">
+  <div class="text-center">
+    <h1 class="pt-3">Bienvenido</h1>
+    <img src="../../../assets/medicine.png">
+    <p class="lead">infocovid es un proyecto realizado por estudiantes de la Universidad Tecnológica de Chihuahua 
+      para generar estadísticas en los síntomas y afectaciones que sufrieron las personas que se enfermaron de COVID-19. 
+      <br>
+      Esta página fue creada para fines informativos. Ninguna información será publicada.</p>
+    <img src="../../../assets/utch.png" class="img-fluid mt-3 mb-5">
+  </div>
+</main>
 
+<main class="container-sm mb-3">
+<div class="bg-light border border-2 border-primary rounded p-2">
+  <h2 class="text-primary">Casos de COVID-19 en México</h2>
+  <div class="row pt-2">
+    <div class="col d-flex justify-content-start">
+      <h4 class="text-primary">Casos Totales:</h4>
+      <h4 class="text-primary ms-2">{{Data.cases}} casos</h4>
+    </div>
+  </div>
+  <div class="row pt-2">
+    <div class="col d-flex justify-content-start">
+      <h4 class="text-primary">Casos del día de hoy:</h4>
+      <h4 class="text-primary ms-2">{{Data.todayCases}} casos</h4>
+    </div>
+  </div>
+  <div class="row pt-2">
+    <div class="col d-flex justify-content-start">
+      <h4 class="text-primary">Casos recuperados:</h4>
+      <h4 class="text-primary ms-2">{{Data.recovered}} casos</h4>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<main class="container-sm">
+  <div class="row">
+    <h2 class="mt-4 text-primary">Medidas de prevención y síntomas</h2>
+    <div class="col d-flex align-items-center">
+    <p class="lead">Las medidas de prevención son las siguientes:
+      <br>
+      <br>
+      - Usa cubrebocas
+      <br><br>
+      - Mantener al menos un metro de distancia con otras personas
+      <br><br>
+      - Lávate las manos con regularidad
+      <br><br>
+      - Evita tocarte la cara
+      <br><br>
+      -Cuando tosas o estornudes, cúbrete la nariz y la boca con el <br>codo flexionado o con un pañuelo
+    </p>
+  </div>
+  <div class="col">
+    <img src="../../../assets/distancia.png" class="img-fluid">
+  </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col">
+      <img src="../../../assets/enfermo.png" class="img-fluid">
+    </div>
+    <div class="col d-flex align-items-center">
+    <p class="lead">
+      Los síntomas más comunes son los siguientes:
+      <br>
+      - Fiebre
+      <br>
+      - Tos seca
+      <br>
+      - Cansancio
+      <br><br>
+      Otros síntomas menos habituales son:
+      <br>
+      - Dolor de garganta
+      <br>
+      - Diarrea
+      <br>
+      - Dolor de cabeza
+      <br>
+      - Pérdida del sentido del olfato o del gusto
+      <br><br>
+      Los síntomas más graves son:
+      <br>
+      - Dificultad para respirar o sensación de falta de aire
+      <br>
+      - Dolor o presión en el pecho
+      <br>
+      - Incapacidad para hablar o moverse
+      <br>
+    </p>
+  </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="text-center">
+      <p class="lead mt-3">Si presentas algun síntoma leve 
+        <br>no salgas de tu casa. Si los 
+        síntomas se <br>agravan favor de acudir con un médico.</p>
+      <img src="../../../assets/medico.png" class="img-fluid">
+      <p class="lead">Información obtenida de la página oficial de la OMS</p>
+      <img src="../../../assets/oms.png" class="img-fluid mb-2 mt-3">
+    </div>
+  </div>
+  
+</main>
+
+<app-footer></app-footer>
+
+
+<!--
 <div>
     <div style="display: block">
       <canvas baseChart
@@ -10,4 +122,4 @@
               [chartType]="barChartType">
       </canvas>
     </div>
-  </div>
+  </div>-->

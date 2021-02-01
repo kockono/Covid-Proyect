@@ -10,6 +10,7 @@ export class ApiCovidService {
   { } 
 
   getCovidInfo() { // Aquí retorna la peticion de la apí 
-    return this.http.get('https://corona.lmao.ninja/v2/countries/MEX');
+    return this.http.get('https://disease.sh/v3/covid-19/countries/MEX?strict=true');
   }
+
 }

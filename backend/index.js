@@ -5,9 +5,9 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://covidUser:usuarioCovid@cluster0.z6sl4.mongodb.net/Covid?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-var app = express();
+let app = express();
 
-var puerto = 3000
+let puerto = 3000
 
 app.use(cors())
 app.use(express.json( {limit:'100mb'} ))
