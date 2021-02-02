@@ -1,15 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const pregSchema = new Schema ({
-    nombre: String,
-    apelldio: String,
-    username: {
-        type: String,
-        trim: true,
-        unique: ['Existe ya un nombre de usuario con esta información', true]
-    },
-    password: String,
-    tipo: String,
+    pregunta1: String,
+    pregunta2: String,
+    pregunta3: String,
+    pregunta4: String,
+    pregunta5: String,
     encuestado: String
 },{
     timestamps:true
