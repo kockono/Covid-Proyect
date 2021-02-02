@@ -32,7 +32,6 @@ router.delete('/delete', async(req, res) => {
 
 router.get('/usuarios', async(req, res) => {
     var datos = await Usuarios.find()
-    console.log(datos)
     return res.status(200).json(datos)
 })
 
