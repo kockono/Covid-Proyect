@@ -7,7 +7,6 @@ router.post('/signup', async(req, res) => {
     const { nombre, apellido, username, password, tipo } = req.body;
     const newUser = new Usuarios ({nombre, apellido, username, password, tipo});
     await newUser.save();
-    console.log("Entre");
     // const token = jwt.sign({_id: newUser._id}, 'secreto')
     res.status(200).json()/*({token})*/
 });
@@ -16,17 +15,25 @@ router.post('/signin', async(req, res) => {
     const { username, password} = req.body;
 
     const user = await Usuarios.findOne({username})
-    if(!user) return res.status(401).send("El Email No Existe");
-    if(user.password !== password) return res.status(401).send("Contraseña Erronea");
+    if(!user) return res.status(401).send("El usuarios no existe");
+    if(user.password !== password) return res.status(401).send("Contraseña incorrecta");
 
     // const token = jwt.sign({_id: user._id}, 'secreto');
     return res.status(200).json(); //({token})
 });
 
+router.delete('/delete', async(req, res) => {
+    const { username, password } = req.body;
+    const dUser = await Usuarios.deleteOne({username})
+    if(!dUser) return res.status(401).send("El usuarios no existe");
+    if(dUser.password !== password) return res.status(401).send("Contraseña incorrecta o no puede eliminar este usuario");
+    return res.status(200).json()
+})
+
 router.get('/usuarios', async(req, res) => {
     var datos = await Usuarios.find()
     console.log(datos)
-    return res.status(200).json()
+    return res.status(200).json(datos)
 })
 
 router.get('/profile', (req,res) => {
