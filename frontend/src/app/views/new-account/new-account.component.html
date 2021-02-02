@@ -1,26 +1,64 @@
 <div class="vh-100 d-flex align-items-center justify-content-center">
-    <main class="form-signin container">
-        <h1 class="text-center text-primary">infocovid.es</h1>
-        <form method="POST" action="#">
-          <h1 class="h3 mb-3 pt-5 fw-normal">Crea tu cuenta</h1>
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" name="nombre">
+    <form [formGroup]="form" (ngSubmit)="signUp()">
+      <main class="form-signin container">
+          <h1 class="text-center text-primary">infocovid.es</h1>
+            <h1 class="h3 mb-3 pt-5 fw-normal">Crea tu cuenta</h1>
+            <div class="row">
+              <div class="col">
+                <input type="text" 
+                       class="form-control" 
+                       placeholder="Nombre" 
+                       aria-label="First name" 
+                       formControlName="nombre"
+                       name="nombre"
+                       autofocus>
+              </div>
+              <div class="col">
+                <input type="text" 
+                       class="form-control" 
+                       placeholder="Apellido" 
+                       formControlName="apellido"
+                       aria-label="Last" 
+                       name="apellido">
+              </div>
             </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Apellido" aria-label="Last" name="apellido">
-            </div>
+  
+            <label for="inputEmail" class="visually-hidden">Correo</label>
+            <input type="email" 
+                   id="inputEmail" 
+                   class="form-control" 
+                   placeholder="Correo" 
+                   formControlName="username"
+                   name="username"
+                   required>
+            <small *ngIf="isValid('username')" class="text-danger">El correo es requerido o no cumple con el estandar</small>
+  
+            <label for="inputPassword" class="visually-hidden">Contraseña</label>
+            <input type="password" 
+                   id="inputPassword" 
+                   class="form-control" 
+                   placeholder="Contraseña" 
+                   formControlName="password"
+                   name="password"
+                   [class.is-invalid]="isValid('password')"
+                   required>
+           <small *ngIf="isValid('password')" class="text-danger">La contraseña no puede ser menor a 5 caracteres</small>
+  
+            <label for="inputPassword2" class="visually-hidden">Confirma tu Contraseña</label>
+            <input type="password" 
+                   id="inputPassword2" 
+                   class="form-control" 
+                   placeholder="Confirma tu Contraseña" 
+                   name="password2"
+                   [class.is-invalid]="isValid('password2')"
+                   formControlName="password2"
+                   required>
+          <small *ngIf="isValid('password2')" class="text-danger">La contraseña no puede ser menor a 5 caracteres</small>
+  
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+          <div class="pt-4 text-center">
+          <a href="/">Regresar</a>
           </div>
-          <label for="inputEmail" class="visually-hidden">Correo</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Correo" name="correo" required autofocus>
-          <label for="inputPassword" class="visually-hidden">Contraseña</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" required>
-          <label for="inputPassword" class="visually-hidden">Confirma tu Contraseña</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Confirma tu Contraseña" name="cpassword" required>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-        </form>
-        <div class="pt-4 text-center">
-        <a href="/">Regresar</a>
-        </div>
-      </main>
+        </main>
+    </form>
     </div>

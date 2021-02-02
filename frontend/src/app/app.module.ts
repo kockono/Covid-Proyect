@@ -20,7 +20,7 @@ import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.compo
 
 //  Libreria para peticiones al BackEnd/Servidor
 import { AuthGuard } from './auth.guard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FooterComponent } from './shared/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -46,6 +46,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HttpClientModule,
     ChartsModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule
   ],
   providers: [  AuthGuard,

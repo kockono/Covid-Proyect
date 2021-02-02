@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user-model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -7,14 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private authService:AuthService,
+              private router:Router) { }
 
   user = {
-    email: '',
-    password: ''
+    username:'',
+    password:''
   }
 
   ngOnInit(): void {
+    
   }
-
+  
+  signIn(){
+    console.log(this.user);
+    this.authService.signIn(this.user)
+    .subscribe( res => {
+      console.log(res);
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/encuesta']);
+      
+    }, (err) => {
+      window.alert("Contraseña incorrecta")
+    })
+  }
 }
