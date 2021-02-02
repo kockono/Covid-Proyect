@@ -31,6 +31,7 @@ app.all('*', function(req, res, next){
 })
 
 app.use('/api', require('./login.routes'));
+app.use('/api', require('./encuesta.routes'))
 
 app.listen(puerto, function () {
     console.log("Api corriendo en el puerto " + puerto);
