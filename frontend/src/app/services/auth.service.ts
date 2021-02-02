@@ -28,5 +28,8 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
+  encuestas(encuesta){
+    return this.http.post<any>(this.URL + '/respuesta', encuesta);
+  }
 
 }

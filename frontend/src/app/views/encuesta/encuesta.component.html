@@ -17,7 +17,12 @@
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta1" id="respuesta13" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="respuesta1" 
+                       id="respuesta13"
+                       [(ngModel)]="Encuestas.pregunta1"
+                       required>
                 <label class="form-check-label" for="respuesta13">
                   Nunca
                 </label>
