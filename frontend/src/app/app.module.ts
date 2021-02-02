@@ -34,7 +34,7 @@ import { NewAccountComponent } from './views/new-account/new-account.component';
     EncuestaComponent,
     NavadminComponent,
     NavuserComponent,
-    NewAccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

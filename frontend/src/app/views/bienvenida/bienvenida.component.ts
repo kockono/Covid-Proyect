@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 // Importanción de servicios
 import { ApiCovidService } from './../../services/api-covid.service';
 
 // Models
 import { Welcome } from 'src/app/models/covid-json.model';
+
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -16,8 +17,7 @@ export class BienvenidaComponent implements OnInit {
 
   Data:Welcome; // Variable con toda la información del api de Covid
 
-  constructor(public apiCovid:ApiCovidService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
-    
+  constructor(public apiCovid:ApiCovidService, private router:Router) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--    
   } 
 
   public barChartOptions = {
@@ -38,7 +38,7 @@ export class BienvenidaComponent implements OnInit {
 
   ngOnInit() {
     this.getData(); // Llamada al metodo que contiene la llamada de la Apí
-    
+    console.log(this.router.url);    
   }
 
   getData() {

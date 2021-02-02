@@ -1,4 +1,6 @@
-<app-navbar></app-navbar>
+<ng-template [ngIf]="this.router.url == '/'"><app-navbar></app-navbar></ng-template>
+<ng-template [ngIf]="this.router.url == '/user'"><app-navuser></app-navuser></ng-template>
+<ng-template [ngIf]="this.router.url == '/admin'"><app-navadmin></app-navadmin></ng-template>
 <main class="container-sm mt-5">
   <div class="text-center">
     <h1 class="pt-3">Bienvenido</h1>

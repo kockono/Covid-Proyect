@@ -7,6 +7,8 @@ import { NewAccountComponent } from './views/new-account/new-account.component';
 
 const routes: Routes = [
   {path: '', component:BienvenidaComponent},
+  {path: 'user', component:BienvenidaComponent},
+  {path: 'admin', component:BienvenidaComponent},
   {path: 'encuesta', component:EncuestaComponent},
   {path: 'login', component:InicioSesionComponent},
   {path: 'new-account', component:NewAccountComponent}
