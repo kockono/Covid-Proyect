@@ -17,7 +17,7 @@ export class BienvenidaComponent implements OnInit {
 
   Data:Welcome; // Variable con toda la información del api de Covid
 
-  constructor(public apiCovid:ApiCovidService, private router:Router) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--    
+  constructor(public apiCovid:ApiCovidService, public router:Router) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--    
   } 
 
   public barChartOptions = {
