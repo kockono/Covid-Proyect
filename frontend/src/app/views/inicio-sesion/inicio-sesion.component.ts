@@ -29,7 +29,7 @@ export class InicioSesionComponent implements OnInit {
     .subscribe( res => {
       console.log(res);
       localStorage.setItem('token', res.token);
-      this.router.navigate(['/encuesta']);
+      this.router.navigate(['/user']);
       
     }, (err) => {
       window.alert("Contraseña incorrecta")
