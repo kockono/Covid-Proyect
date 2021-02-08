@@ -32,7 +32,7 @@ export class InicioSesionComponent implements OnInit {
       this.router.navigate(['/user']);
       
     }, (err) => {
-      window.alert("Contraseña incorrecta")
+      window.alert("Contraseña incorrecta o correo no existente")
     })
   }
 }
