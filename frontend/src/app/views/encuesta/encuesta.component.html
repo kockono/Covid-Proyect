@@ -1,29 +1,42 @@
 <app-navuser></app-navuser>
 <div class="container pt-5">
     <h2 class="pt-4 text-primary">Encuesta</h2>
-    <form action="#" method="POST" class="was-validated">
+    <form action="#" method="POST" class="was-validated" (ngSubmit)="onSubmit()">
         <div class="mb-3 mt-4 border border-primary rounded p-3">
             <label>¿Qué tan seguido tienes fiebre?</label>
             <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta1" id="respuesta11" required>
-                <label class="form-check-label" for="respuesta11">
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta1"
+                       value="0"
+                       [(ngModel)]="EncuestasComposicion.pregunta1"
+                       required>
+
+                <label class="form-check-label">
                     Frecuente
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta1" id="respuesta12" required>
-                <label class="form-check-label" for="respuesta12">
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta1"       
+                       value="1"
+                       [(ngModel)]="EncuestasComposicion.pregunta1"
+                       required>
+
+                <label class="form-check-label">
                   Poco Frecuente
                 </label>
               </div>
               <div class="form-check mt-1">
                 <input class="form-check-input" 
                        type="radio" 
-                       name="respuesta1" 
-                       id="respuesta13"
-                       [(ngModel)]="Encuestas.pregunta1"
+                       name="pregunta1" 
+                       value="2"
+                       [(ngModel)]="EncuestasComposicion.pregunta1"
                        required>
-                <label class="form-check-label" for="respuesta13">
+
+                <label class="form-check-label">
                   Nunca
                 </label>
                 <div class="invalid-feedback">Selecciona una opción</div>
@@ -33,13 +46,25 @@
         <div class="mb-3 mt-4 border border-primary rounded p-3">
             <label>¿Toses frecuentemente?</label>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta2" id="respuesta21" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta2" 
+                       value="0" 
+                       [(ngModel)]="EncuestasComposicion.pregunta2"
+                       required>
+
                 <label class="form-check-label" for="respuesta21">
                   Si
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta2" id="respuesta22" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta2" 
+                       value="1" 
+                       [(ngModel)]="EncuestasComposicion.pregunta2"
+                       required>
+
                 <label class="form-check-label" for="respuesta22">
                   No
                 </label>
@@ -50,13 +75,23 @@
         <div class="mb-3 mt-4 border border-primary rounded p-3">
             <label>¿Haz tenido diarrea recientemente?</label>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta3" id="respuesta31" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="respuesta3" 
+                       id="respuesta31" 
+                       required>
+
                 <label class="form-check-label" for="respuesta21">
                   Si
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta3" id="respuesta32" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="respuesta3" 
+                       id="respuesta32" 
+                       required>
+
                 <label class="form-check-label" for="respuesta22">
                   No
                 </label>
@@ -67,19 +102,34 @@
         <div class="mb-3 mt-4 border border-primary rounded p-3">
             <label>¿Qué tan seguido te sientes cansado?</label>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta4" id="respuesta41" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="respuesta4" 
+                       id="respuesta41" 
+                       required>
+
                 <label class="form-check-label" for="respuesta21">
                 Muy seguido (más de 5 días seguidos)
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta4" id="respuesta42" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="respuesta4" 
+                       id="respuesta42" 
+                       required>
+
                 <label class="form-check-label" for="respuesta22">
                     Seguido (entre 3 y 5 días seguidos)
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta4" id="respuesta43" required>
+                <input class="form-check-input" 
+                type="radio" 
+                name="respuesta4" 
+                id="respuesta43" 
+                required>
+
                 <label class="form-check-label" for="respuesta22">
                     No tan seguido (entre 1 y 3 días seguidos)
                 </label>
