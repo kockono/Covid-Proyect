@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 // Importanción de servicios
@@ -14,9 +15,10 @@ import { Welcome } from 'src/app/models/covid-json.model';
 })
 export class BienvenidaComponent implements OnInit {
 
-  Data:Welcome; // Variable con toda la información del api de Covid
+  Data:Welcome;      // Variable con toda la información del api de Covid
+  DataEncuesta:any;  // Variable con toda la información de las encuestas
 
-  constructor(public apiCovid:ApiCovidService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
+  constructor(public apiCovid:ApiCovidService, public encuesta:AuthService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
     
   } 
 
@@ -46,6 +48,9 @@ export class BienvenidaComponent implements OnInit {
       console.info(res) // Un Console.info para ver la respuesta que nos trae el servidor o la Api 
       this.Data = res   // Aquí igualamos la info que trae la api del servicio en la variable --Data--
     });
+    this.encuesta.getEncuestas().subscribe(res => {
+      this.DataEncuesta = res;
+    })
   }
 
 }

@@ -72,4 +72,10 @@ router.post('/preguntas/:id', async(req, res) => {
     
 })
 
+router.get('/encuestas/:id', async(req, res) => {
+    let ID = req.params.id;
+    var datos = await Encuestas.findById(ID);
+    return res.status(200).json(datos)
+})
+
 module.exports = router;

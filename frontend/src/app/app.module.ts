@@ -15,7 +15,6 @@ import { NavadminComponent } from './shared/navadmin/navadmin.component';
 import { NavuserComponent } from './shared/navuser/navuser.component';
 import { NewAccountComponent } from './views/new-account/new-account.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { GraficasComponent } from './views/graficas/graficas.component';
 import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.component';
 
 //  Libreria para peticiones al BackEnd/Servidor
@@ -25,6 +24,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FooterComponent } from './shared/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { GraphicsComponent } from './views/graphics/graphics.component';
 
 
 @NgModule({
@@ -32,13 +32,13 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     AppComponent,
     BienvenidaComponent,
     NavbarComponent,
-    GraficasComponent,
     InicioSesionComponent,
     FooterComponent,
     EncuestaComponent,
     NavadminComponent,
     NavuserComponent,
     NewAccountComponent,
+    GraphicsComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,8 +28,12 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
-  encuestas(encuesta){
+  sendEncuesta(encuesta){
     return this.http.post<any>(this.URL + '/respuesta/60205f5f186773f001b67269', encuesta);
+  }
+  getEncuestas(){
+    return this.http.get(this.URL + '/encuestas/60205f5f186773f001b67269');
+
   }
 
 }
