@@ -17,45 +17,44 @@ router.post('/preguntas/:id', async(req, res) => {
 
     Encuestas.findById(ID, (err , doc) => {
         questionOriginal = doc;
-        console.log(questionOriginal)
-        console.log(question)
-        if(question.pregunta1.frecuente === 1) {
+
+        if(question.pregunta1 === 1) {
             questionOriginal.pregunta1.pocoFrecuente = questionOriginal.pregunta1.Frecuente + 1;
         }
-        if(question.pregunta1.pocoFrecuente === 1){
+        if(question.pregunta1 === 2){
             questionOriginal.pregunta1.pocoFrecuente = questionOriginal.pregunta1.pocoFrecuente + 1;
         }
-        if(question.pregunta1.nunca === 1){
+        if(question.pregunta1 === 3){
             questionOriginal.pregunta1.nunca = questionOriginal.pregunta1.nunca +1
         }
-        if(question.pregunta2.si === 1) {
+        if(question.pregunta2 === 1) {
             questionOriginal.pregunta2.si = questionOriginal.pregunta2.si + 1;
         }
-        if(question.pregunta2.no === 1) {
+        if(question.pregunta2 === 2) {
             questionOriginal.pregunta2.no = questionOriginal.pregunta2.no + 1;
         }
-        if(question.pregunta3.si === 1) {
+        if(question.pregunta3 === 1) {
             questionOriginal.pregunta3.si = questionOriginal.pregunta3.si + 1;
         }
-        if(question.pregunta3.no === 1) {
+        if(question.pregunta3 === 2) {
             questionOriginal.pregunta3.no = questionOriginal.pregunta3.no + 1;
         }
-        if(question.pregunta4.muySeguido === 1) {
+        if(question.pregunta4 === 1) {
             questionOriginal.pregunta4.mu = questionOriginal.pregunta4.mu + 1;
         }
-        if(question.pregunta4.seguido === 1) {
+        if(question.pregunta4 === 2) {
             questionOriginal.pregunta4.se = questquestionOriginalon.pregunta4.se + 1;
         }
-        if(question.pregunta4.noTanSeguido === 1) {
+        if(question.pregunta4 === 3) {
             questionOriginal.pregunta4.no = questionOriginal.pregunta4.no + 1;
         }
-        if(question.pregunta4.nadaSeguido === 1) {
+        if(question.pregunta4 === 4) {
             questionOriginal.pregunta4.na = questionOriginal.pregunta4.na + 1;
         }
-        if(question.pregunta5.si === 1) {
+        if(question.pregunta5 === 1) {
             questionOriginal.pregunta5.si = questionOriginal.pregunta5.si + 1;
         }
-        if(question.pregunta5.no === 1) {
+        if(question.pregunta5 === 2) {
             questionOriginal.pregunta5.no = questionOriginal.pregunta5.no + 1;
         }
     

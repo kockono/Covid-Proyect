@@ -8,7 +8,7 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="pregunta1"
-                       value="0"
+                       value="1"
                        [(ngModel)]="EncuestasComposicion.pregunta1"
                        required>
 
@@ -20,7 +20,7 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="pregunta1"       
-                       value="1"
+                       value="2"
                        [(ngModel)]="EncuestasComposicion.pregunta1"
                        required>
 
@@ -32,7 +32,7 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="pregunta1" 
-                       value="2"
+                       value="3"
                        [(ngModel)]="EncuestasComposicion.pregunta1"
                        required>
 
@@ -49,7 +49,7 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="pregunta2" 
-                       value="0" 
+                       value="1" 
                        [(ngModel)]="EncuestasComposicion.pregunta2"
                        required>
 
@@ -61,7 +61,7 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="pregunta2" 
-                       value="1" 
+                       value="2" 
                        [(ngModel)]="EncuestasComposicion.pregunta2"
                        required>
 
@@ -77,8 +77,9 @@
               <div class="form-check mt-1">
                 <input class="form-check-input" 
                        type="radio" 
-                       name="respuesta3" 
-                       id="respuesta31" 
+                       name="pregunta3"
+                       value="1" 
+                       [(ngModel)]="EncuestasComposicion.pregunta3"
                        required>
 
                 <label class="form-check-label" for="respuesta21">
@@ -89,7 +90,8 @@
                 <input class="form-check-input" 
                        type="radio" 
                        name="respuesta3" 
-                       id="respuesta32" 
+                       value="2" 
+                       [(ngModel)]="EncuestasComposicion.pregunta3"
                        required>
 
                 <label class="form-check-label" for="respuesta22">
@@ -104,8 +106,9 @@
               <div class="form-check mt-1">
                 <input class="form-check-input" 
                        type="radio" 
-                       name="respuesta4" 
-                       id="respuesta41" 
+                       name="pregunta4"
+                       value="1"
+                       [(ngModel)]="EncuestasComposicion.pregunta4"
                        required>
 
                 <label class="form-check-label" for="respuesta21">
@@ -115,8 +118,9 @@
               <div class="form-check mt-1">
                 <input class="form-check-input" 
                        type="radio" 
-                       name="respuesta4" 
-                       id="respuesta42" 
+                       name="pregunta4" 
+                       value="2"
+                       [(ngModel)]="EncuestasComposicion.pregunta4"
                        required>
 
                 <label class="form-check-label" for="respuesta22">
@@ -125,17 +129,23 @@
               </div>
               <div class="form-check mt-1">
                 <input class="form-check-input" 
-                type="radio" 
-                name="respuesta4" 
-                id="respuesta43" 
-                required>
+                       type="radio" 
+                       name="pregunta4" 
+                       value="3"
+                       [(ngModel)]="EncuestasComposicion.pregunta4"
+                       required>
 
                 <label class="form-check-label" for="respuesta22">
                     No tan seguido (entre 1 y 3 días seguidos)
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta4" id="respuesta44" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta4" 
+                       value="4"
+                       [(ngModel)]="EncuestasComposicion.pregunta4"
+                       required>
                 <label class="form-check-label" for="respuesta21">
                     Nada seguido (menos de 1 día)
                 </label>
@@ -146,13 +156,23 @@
         <div class="mb-3 mt-4 border border-primary rounded p-3">
             <label>¿Haz perdido el sentido del gusto u olfato?</label>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta5" id="respuesta51" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta5"
+                       value="1" 
+                       [(ngModel)]="EncuestasComposicion.pregunta5"
+                       required>
                 <label class="form-check-label" for="respuesta21">
                   Si
                 </label>
               </div>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="radio" name="respuesta5" id="respuesta52" required>
+                <input class="form-check-input" 
+                       type="radio" 
+                       name="pregunta5"
+                       value="2"
+                       [(ngModel)]="EncuestasComposicion.pregunta5"
+                       required>
                 <label class="form-check-label" for="respuesta22">
                   No
                 </label>

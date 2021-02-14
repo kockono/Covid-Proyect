@@ -29,7 +29,7 @@ export class AuthService {
     this.router.navigate(['/']);
   }
   encuestas(encuesta){
-    return this.http.post<any>(this.URL + '/respuesta', encuesta);
+    return this.http.post<any>(this.URL + '/respuesta/60205f5f186773f001b67269', encuesta);
   }
 
 }
