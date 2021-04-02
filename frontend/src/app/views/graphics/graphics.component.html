@@ -1,5 +1,79 @@
-<span>frecuente</span>:  <h1>{{DataEncuesta?.pregunta1.frecuente}}</h1>
+<app-navadmin></app-navadmin>
+<div class="container pt-5">
+  <h2 class="pt-4 text-primary">Datos de las encuestas</h2>
+  <!-- <span>frecuente</span>:  <h1>{{DataEncuesta?.pregunta1.frecuente}}</h1>
 <span>nunca</span>:  <h1>{{DataEncuesta?.pregunta1.nunca}}</h1>
 <span>pocoFrecuente</span>:  <h1>{{DataEncuesta?.pregunta1.pocoFrecuente}}</h1>
 <span>no</span>:  <h1>{{DataEncuesta?.pregunta2.no}}</h1>
-<span>si</span>:  <h1>{{DataEncuesta?.pregunta2.si}}</h1>
+<span>si</span>:  <h1>{{DataEncuesta?.pregunta2.si}}</h1> -->
+  <div class="mt-4 mb-3" id="pregunta1">
+    <h5>¿Qué tan seguido tienes fiebre?</h5>
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData1"
+        [labels]="barChartLabels1"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-2 mb-3" id="pregunta2">
+    <h5>¿Toses frecuentemente?</h5>
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData2"
+        [labels]="barChartLabels2"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-2 mb-3" id="pregunta3">
+    <h5>¿Haz tenido diarrea recientemente?</h5>
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData3"
+        [labels]="barChartLabels3"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-2 mb-3" id="pregunta4">
+    <h5>¿Qué tan seguido te sientes cansado?</h5>
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData4"
+        [labels]="barChartLabels4"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-2 mb-3" id="pregunta5">
+    <h5>¿Haz perdido el sentido del gusto u olfato?</h5>
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData5"
+        [labels]="barChartLabels5"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>
