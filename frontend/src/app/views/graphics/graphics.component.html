@@ -3,3 +3,17 @@
 <span>pocoFrecuente</span>:  <h1>{{DataEncuesta?.pregunta1.pocoFrecuente}}</h1>
 <span>no</span>:  <h1>{{DataEncuesta?.pregunta2.no}}</h1>
 <span>si</span>:  <h1>{{DataEncuesta?.pregunta2.si}}</h1>
+
+
+
+<div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>

@@ -23,5 +23,21 @@ export class GraphicsComponent implements OnInit {
       console.log(this.DataEncuesta);
     })
   }
+  
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+
+  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+
+  public barChartData = [
+    {data: [65], label: 'A'},
+    {data: [28], label: 'B'},
+    {data: [28], label: 'C'},
+    {data: [28], label: 'D'}
+  ];
 
 }

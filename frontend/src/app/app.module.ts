@@ -20,12 +20,17 @@ import { InicioSesionComponent } from './views/inicio-sesion/inicio-sesion.compo
 //  Libreria para peticiones al BackEnd/Servidor
 import { AuthGuard } from './auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Import the injector module and the HTTP client module from Angular
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FooterComponent } from './shared/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { GraphicsComponent } from './views/graphics/graphics.component';
 
+
+// Import the HTTP interceptor from the Auth0 Angular SDK
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,32 @@ import { GraphicsComponent } from './views/graphics/graphics.component';
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AuthModule.forRoot({
+      domain: 'dev-vg58e-nr.us.auth0.com',
+      clientId: 'E40VlcW2ImNhbJPqaPDsW8wPovdDzS9O',
+       // Request this audience at user authentication time
+       audience: "https://dev-vg58e-nr.us.auth0.com/api/v2/",
+
+      // Request this scope at user authentication time
+      scope: "read:current_user",
+
+  // Specify configuration for the interceptor              
+  httpInterceptor: {
+    allowedList: [
+      {
+        uri: 'https://dev-vg58e-nr.us.auth0.com/api/v2/*',
+        tokenOptions: {
+          // The attached token should target this audience
+          audience: 'https://dev-vg58e-nr.us.auth0.com/api/v2/',
+
+          // The attached token should have these scopes
+          scope: 'read:current_user'
+        }
+      }
+    ]
+  }
+    }),
   ],
   providers: [  AuthGuard,
     {
