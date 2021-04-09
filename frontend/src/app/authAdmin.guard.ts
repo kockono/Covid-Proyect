@@ -9,18 +9,18 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 
 
-export class AuthGuard implements CanActivate {
+export class AuthGuardAdmin implements CanActivate {
   
   constructor(private authService: AuthServicee,
               private router: Router,
               private auth:AuthService
               )  { }
+  tipo:string;
 
   canActivate( ): boolean {
 
-
-
-    if(this.authService.loggedIn()){
+    this.tipo = this.authService.getType()
+    if(this.tipo == "admin"){
       return true;
     }
     this.router.navigate(['/login'])

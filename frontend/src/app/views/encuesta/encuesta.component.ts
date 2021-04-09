@@ -1,4 +1,4 @@
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthServicee } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncuestaComponent implements OnInit {
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthServicee) { }
 
   EncuestasComposicion ={
     pregunta1: 0,

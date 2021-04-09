@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthServicee {
 
   constructor(private http:HttpClient, private router: Router) { }
 
@@ -15,17 +15,23 @@ export class AuthService {
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
+  getType(){
+    return localStorage.getItem('tipo');
+  }
   signIn(user){
     return this.http.post<any>(this.URL + '/signin', user);
   }
   loggedIn(){
     return !!localStorage.getItem('token');
   }
+
   getToken(){
     return localStorage.getItem('token');
   }
   logOut(){
     localStorage.removeItem('token');
+    localStorage.removeItem('tipo');
+    localStorage.removeItem('permissions');
     this.router.navigate(['/']);
   }
   sendEncuesta(encuesta){

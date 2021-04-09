@@ -1,11 +1,13 @@
-import { AuthService } from 'src/app/services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { AuthServicee } from 'src/app/services/auth.service';
+import { Component, Inject, OnInit } from '@angular/core';
 
 // Importanción de servicios
 import { ApiCovidService } from './../../services/api-covid.service';
 
 // Models
 import { Welcome } from 'src/app/models/covid-json.model';
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -18,7 +20,9 @@ export class BienvenidaComponent implements OnInit {
   Data:Welcome;      // Variable con toda la información del api de Covid
   DataEncuesta:any;  // Variable con toda la información de las encuestas
 
-  constructor(public apiCovid:ApiCovidService, public encuesta:AuthService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
+  constructor(public apiCovid:ApiCovidService, public encuesta:AuthServicee,
+    @Inject(DOCUMENT) public document: Document
+  ,public auth: AuthService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
     
   } 
 

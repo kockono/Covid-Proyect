@@ -1,7 +1,7 @@
 import { User } from './../../models/user-model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthServicee } from 'src/app/services/auth.service';
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewAccountComponent implements OnInit {
 
-  constructor(private authService:AuthService,
+  constructor(private authService:AuthServicee,
               private router:Router,
               private fb:FormBuilder) 
   { }

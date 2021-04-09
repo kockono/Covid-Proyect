@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor } from '@angular/common/http';
-import { AuthService } from './auth.service';
+import { AuthServicee } from './auth.service';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthServicee) { }
 
   intercept(req, next) {
     const  tokenizeReq = req.clone({

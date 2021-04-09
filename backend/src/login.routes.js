@@ -17,9 +17,12 @@ router.post('/signin', async(req, res) => {
     const { username, password} = req.body;
 
     const user = await Usuarios.findOne({username})
+    const tipo = user.tipo;
+    console.log(tipo)
     if(user.password !== password) return res.status(401).send("Contraseña incorrecta");
     const token = jwt.sign({_id: user._id}, 'secreto');
-    res.status(200).json({token})
+
+    res.status(200).json({token, tipo})
 
 });
 

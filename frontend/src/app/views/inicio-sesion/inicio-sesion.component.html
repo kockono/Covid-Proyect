@@ -21,7 +21,36 @@
              [(ngModel)]="user.password"
              required>
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+      <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Entrar</button>
+
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/home">Home</a>
+        </li> -->
+      <li class="nav-item" routerLinkActive="active">
+        <!-- Si esta activa agregale esta clase -->
+        <div *ngIf="auth.isAuthenticated$ | async" >
+          <a   class="nav-link" routerLink="/protegida">Perfil</a>
+        </div>
+      </li>
+    </ul>
+    <span class="navbar-text">
+
+
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <button  class="btn btn-outline-danger" (click)="auth.logout({ returnTo: document.location.origin })">
+          Log out
+        </button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <button class="w-100 btn btn-lg btn-primary" (click)="Google()">Google</button>
+      </ng-template>
+
+
+    </span>
+
+
     </form>
     <div class="pt-4 text-center">
     <a href="/new-account">¿No tienes cuenta? Registrate</a>
