@@ -22,25 +22,9 @@ export class BienvenidaComponent implements OnInit {
 
   constructor(public apiCovid:ApiCovidService, public encuesta:AuthServicee,
     @Inject(DOCUMENT) public document: Document
-  ,public auth: AuthService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
+    ,public auth: AuthService) {  // Aquí instanciamos el servicio que contiene los metodos de la Api en la variable  --apiCovid--
     
   } 
-
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType = 'bar';
-  public barChartLegend = true;
-
-  public barChartData = [
-    {data: [65], label: 'A'},
-    {data: [28], label: 'B'},
-    {data: [28], label: 'C'},
-    {data: [28], label: 'D'}
-  ];
-
 
   ngOnInit() {
     this.getData(); // Llamada al metodo que contiene la llamada de la Apí
