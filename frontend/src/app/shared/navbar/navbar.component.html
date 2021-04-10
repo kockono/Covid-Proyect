@@ -1,35 +1,37 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-primary fixed-top ">
   <div class="container-fluid">
-    <div class="nav-item">
-      <a class="navbar-brand text-primary" href="/">infocovid.mx</a>
-    </div>
-
-    <div class="nav-item" *ngIf="authService.getType() === 'admin'">
-      <a class="navbar-brand text-primary" href="/graphics">Gráficas</a>
-    </div> 
-
-    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut ">
-
-        <button  class="btn btn-outline-danger"(click)="auth.logout({ returnTo: document.location.origin }); logOut()">
-          Cerrar sesión
-        </button>
-
-    </ng-container>
-
-    <div class="d-flex">
-      <ng-template #loggedOut>
-      <div *ngIf="!valido || !auth.isAuthenticated$">
-          <a class="btn btn-outline-primary" href="/login" role="button">Inicia Sesión</a>
+    <a class="navbar-brand text-primary" href="/">infocovid.mx</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <ng-container class="nav-item" *ngIf="authService.getType() === 'admin'; else usuario">
+            <a class="nav-link active text-primary" role="button" href="/graphics">Gráficas</a>
+          </ng-container>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut ">
+          <a class="btn btn-outline-danger" role="button" (click)="auth.logout({ returnTo: document.location.origin }); logOut()">
+            Cerrar sesión
+          </a>
+        </ng-container>
       </div>
-      <div class="" *ngIf="valido">
-        <button class="btn btn-outline-danger" (click)="logOut()">
-          Cerrar sesión
-        </button>
-      </div>
-      </ng-template>
-
-
-    </div>
   </div>
 </nav>
+
+
+<ng-template #loggedOut>
+  <div *ngIf="!valido || !auth.isAuthenticated$">
+      <a class="btn btn-outline-primary" href="/login" role="button">Inicia Sesión</a>
+  </div>
+  <div *ngIf="valido">
+    <a class="btn btn-outline-danger" role="button" (click)="logOut()">
+      Cerrar sesión
+    </a>
+  </div>
+  </ng-template>
+  <ng-template #usuario>
+    <div class="nav-item">
+      <a class="nav-link active text-primary" role="button" aria-current="page" href="/encuesta">Encuesta</a>
+    </div>
+  </ng-template>
